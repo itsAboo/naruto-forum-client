@@ -1,0 +1,133 @@
+.mycontainer{
+    background-color: #1746A2;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 55555;
+    display: flex;
+    justify-content: center;
+}
+.nav-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1746A2;
+    width: 1920px;
+    height: 70px;
+    flex-wrap: wrap;
+}
+.logo-container{
+    width: 120px;
+}
+.logo{
+    width: 100%;
+    margin-top: 5px;
+}
+.list-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list-container li{
+    list-style-type: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 1.05rem;
+    color: #FFF7E9;
+}
+.list-container li .nav-list{
+    text-decoration: none;
+    color: #FFF7E9;
+}
+.list-container li.nav-list:hover{
+    color: rgb(30, 90, 193);
+}
+.hamburger{
+    width: 45px;
+    display: none;
+    color: white;
+}
+.nav-user{
+    position: relative;
+    cursor: pointer;
+}
+.nav-user-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-user-icon{
+    color: #FFF7E9;
+    font-size: 2rem;
+    text-align: center;
+    margin-right: 5px;
+}
+.nav-user-name{
+    color: #FF731D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-user-name:hover{
+    color: #FF731D;
+}
+.nav-user-arrow{
+    color: #FFF7E9;
+    font-size: 2rem;
+}
+.nav-user-list-container{
+    background-color: #5F9DF7;
+    width: 250px;
+    padding: 10px;
+    position: absolute;
+    top: 100%;
+    left: -23%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.nav-user-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-user-list a{
+    margin: 5px 0;
+}
+@media screen and (max-width : 768px) {
+    .hamburger{
+        display: block;
+    }
+    .list-container{
+        display: none;
+    }  
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-user{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .nav-user-list-container{
+        position: initial;
+        width: 100%;
+        box-shadow: none;
+    }
+}
+.active{
+    display: block;
+    position: absolute;
+    background-color: #5F9DF7;
+    top: 70px;
+    width: 100vw;
+    text-align: center;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    padding-bottom: 5px;
+}
+

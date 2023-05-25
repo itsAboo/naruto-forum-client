@@ -1,0 +1,175 @@
+.d-flex {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.app-container {
+    max-width: 1440px;
+    display: flex;
+    margin: 0 1rem;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+section {
+    margin-top: 2.5rem;
+}
+
+.summary {
+    border-radius: 10px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.summary-header {
+    background-color: #5F9DF7;
+    padding: 1rem;
+}
+.summary-header h1 {
+    font-size: 1.5rem;
+}
+
+.summary-content {
+    padding: 1rem;
+}
+
+.summary-content p {
+    font-size: 1.25rem;
+}
+
+.review-characther {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.characther-box {
+    padding: 15px;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 400px;
+}
+
+.characther-content {
+    padding: 10px;
+}
+
+.characther-content h1 {
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.characther-content p {
+    font-size: 1.25rem;
+}
+
+.m-box {
+    display: flex;
+    padding: 15px;
+    height: 400px;
+}
+
+.characther-img {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.characther-img img {
+    width: 300px;
+}
+
+.end-of-page {
+    width: 100%;
+    position: relative;
+}
+
+.end-img {
+    width: 100%;
+}
+
+.end-link {
+    position: absolute;
+    width: 200px;
+    height: 70px;
+    background-color: red;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.end-link a {
+    width: 100%;
+    height: 100%;
+    background-color: #FF731D;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFF7E9;
+    font-size: 1.5rem;
+}
+
+.end-link:hover {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 8px 24px, rgba(255, 255, 255, 0.1) 0px 16px 56px, rgba(255, 255, 255, 0.1) 0px 24px 80px;
+}
+
+.konoha-img {
+    width: 100%;
+}
+
+@media screen and (max-width:768px) {
+    .app-container{
+        overflow-x: hidden;
+    }
+    .summary{
+        max-width: 100vw;
+    }
+    .summary-header h1{
+        font-size: 1.25rem;
+    }
+    .summary-content p{
+        font-size: 1rem;
+    }
+    .review-characther{
+        gap: 10px;
+    }
+    .characther-box{
+        display: flex;
+        flex-direction: column;
+        max-width: 100vw;
+    }
+    .m-box{
+        display: flex;
+        flex-direction: column;
+        max-width: 100vw;
+    }
+    .characther-content h1{
+        font-size: 1.25rem;
+    }
+    .characther-content p{
+        font-size: 1rem;
+    }
+    .characther-img{
+        width: 100%;
+    }
+    .characther-img img{
+        width: 200px;
+    }
+    .end-link{
+        width: 150px;
+        height: 50px;
+    }
+    .end-link a{
+        font-size: 1.25rem;
+    }
+}

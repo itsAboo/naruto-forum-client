@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+*{
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+    word-break: break-word;
+    text-decoration: none;
+}
+/* .orange-primary{
+    color: #FF731D;
+}
+.blue-primary{
+    color: #1746A2;
+}
+.blue-secondary{
+    color: #5F9DF7;
+}
+.white-bg{
+    color: #FFF7E9;
+} */
