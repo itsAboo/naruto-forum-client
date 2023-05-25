@@ -40,6 +40,7 @@ export default function LoginPage() {
             }).then(res => {
                 if (res.isConfirmed || res.dismiss) {
                     authenticate(response,()=> {
+                        navigate("/");
                         navigate(0);
                     });
                 }
