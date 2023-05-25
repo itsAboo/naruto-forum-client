@@ -15,6 +15,7 @@ export default function Navbar() {
     // } else {
     //   navigate("/");
     // }
+    navigate("/");
     navigate(0);
   };
   const [menuIsOpen, setMenuIsOpen] = useState(false);
