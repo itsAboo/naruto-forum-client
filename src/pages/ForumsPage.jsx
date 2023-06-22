@@ -4,7 +4,6 @@ import REACT_APP_API from "../../env";
 import { LoadingContext, LoadingIcon } from "../contexts/LoadingContext";
 import "../css/ForumsPage.css";
 import { Link, useNavigate } from "react-router-dom";
-import { Parser } from "html-to-react";
 import { UserContext } from "../contexts/UserContext";
 import Swal from "sweetalert2";
 
@@ -18,15 +17,22 @@ export default function ForumsPage() {
   const [searchKeyword,setSearchKeyword] = useState("");
   const fetchData = async () => {
     setIsLoading(true);
-    await axios
-      .get(`${REACT_APP_API}/api/forums`)
-      .then((res) => {
-        setIsLoading(false);
-        setForums(res.data);
-      })
-      .catch((err) => {
-        console.log(err.response.data.error);
-      });
+    try{
+       const response = await axios.get(`${REACT_APP_API}/api/forums`);
+       setForums(response.data);
+       setIsLoading(false);
+    }catch(err){
+      throw new Error(err.response.data.error);
+    }
+    // await axios
+    //   .get(`${REACT_APP_API}/api/forums`)
+    //   .then((res) => {
+    //     setIsLoading(false);
+    //     setForums(res.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.response.data.error);
+    //   });
   };
   const handleDeleteAndEditBtn = (author) => {
     if (user.username === author) {
@@ -154,7 +160,7 @@ export default function ForumsPage() {
               className="search-bar"
               placeholder="ค้นหาบทความ"
               value={searchKeyword}
-              onChange={(event)=>setSearchKeyword(event.target.value)}
+              onChange={(event) => setSearchKeyword(event.target.value)}
             />
             <button
               type="submit"
@@ -163,8 +169,8 @@ export default function ForumsPage() {
                 backgroundColor: "transparent",
                 position: "absolute",
                 right: "2%",
-                top:"0%",
-                color:"black"
+                top: "0%",
+                color: "black",
               }}
               className="material-symbols-outlined search-icon"
             >
@@ -201,20 +207,7 @@ export default function ForumsPage() {
               onClick={prevPage}
               disabled={currentPage === 1}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5"
-                />
-              </svg>
+              <span class="material-symbols-outlined">arrow_back_ios_new</span>
             </button>
             <span className="pagination-center">
               หน้า {currentPage} จากทั้งหมด {totalpages}
@@ -224,20 +217,7 @@ export default function ForumsPage() {
               onClick={nextPage}
               disabled={currentPage === totalpages}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
-                />
-              </svg>
+              <span class="material-symbols-outlined">arrow_forward_ios</span>
             </button>
           </div>
         </div>
