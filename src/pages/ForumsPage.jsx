@@ -207,7 +207,7 @@ export default function ForumsPage() {
               onClick={prevPage}
               disabled={currentPage === 1}
             >
-              <span class="material-symbols-outlined">arrow_back_ios_new</span>
+              <span className="material-symbols-outlined">arrow_back_ios_new</span>
             </button>
             <span className="pagination-center">
               หน้า {currentPage} จากทั้งหมด {totalpages}
@@ -217,7 +217,7 @@ export default function ForumsPage() {
               onClick={nextPage}
               disabled={currentPage === totalpages}
             >
-              <span class="material-symbols-outlined">arrow_forward_ios</span>
+              <span className="material-symbols-outlined">arrow_forward_ios</span>
             </button>
           </div>
         </div>
